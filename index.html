@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A free cybersecurity awareness toolkit by Mark Garbee. Learn about password safety, phishing prevention and online privacy.">
+  <meta name="author" content="Mark Garbee">
+  <title>Cybersecurity Awareness Toolkit | Mark Garbee</title>
+  <style>
+    :root {
+      --bg: #070b13;
+      --panel: #101a29;
+      --blue: #438cff;
+      --cyan: #75d5ff;
+      --text: #edf4ff;
+      --muted: #a4b2c7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 24px 8%;
+      border-bottom: 1px solid #263449;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    header strong { color: var(--cyan); }
+
+    main {
+      width: min(1000px, 88%);
+      margin: auto;
+    }
+
+    .hero { padding: 85px 0 50px; }
+
+    .tag {
+      color: var(--cyan);
+      letter-spacing: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 62px);
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .intro { color: var(--muted); max-width: 650px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin: 35px 0 70px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid #263449;
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .card h2 { color: var(--cyan); font-size: 20px; }
+
+    .card p { color: var(--muted); }
+
+    li { margin: 9px 0; }
+
+    .checklist label {
+      display: block;
+      padding: 9px 0;
+      cursor: pointer;
+    }
+
+    input { accent-color: var(--blue); }
+
+    button {
+      background: var(--blue);
+      color: white;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover { background: #286fd8; }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      border-top: 1px solid #263449;
+    }
+
+    a { color: var(--cyan); }
+
+    @media (max-width: 600px) {
+      .hero { padding-top: 55px; }
+      header { padding: 20px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <strong>MG / CYBERSECURITY</strong>
+  <span>Awareness Toolkit · 2026</span>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="tag">Digital Safety Education</div>
+    <h1>Understand threats.<br><span>Protect your digital life.</span></h1>
+    <p class="intro">
+      A free educational toolkit covering essential cybersecurity
+      concepts, safer online habits and ways to protect your accounts.
+    </p>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>01 / Password Safety</h2>
+      <p>Learn how to make your accounts harder to compromise.</p>
+      <ul>
+        <li>Use long, unique passwords.</li>
+        <li>Use a reputable password manager.</li>
+        <li>Enable multi-factor authentication.</li>
+        <li>Never share verification codes.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>02 / Phishing Awareness</h2>
+      <p>Recognize suspicious messages and misleading websites.</p>
+      <ul>
+        <li>Check the sender's address.</li>
+        <li>Be cautious with unexpected links.</li>
+        <li>Watch for urgent or threatening messages.</li>
+        <li>Verify requests through official channels.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>03 / Online Privacy</h2>
+      <p>Make thoughtful decisions about your personal information.</p>
+      <ul>
+        <li>Review account privacy settings.</li>
+        <li>Limit unnecessary personal information sharing.</li>
+        <li>Keep devices and applications updated.</li>
+        <li>Review app permissions regularly.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="card checklist">
+    <h2>Personal Security Checklist</h2>
+    <p>Check the security habits you have completed.</p>
+
+    <label><input type="checkbox"> I use unique passwords for important accounts.</label>
+    <label><input type="checkbox"> I have enabled multi-factor authentication.</label>
+    <label><input type="checkbox"> I check links before opening them.</label>
+    <label><input type="checkbox"> My devices and applications are updated.</label>
+    <label><input type="checkbox"> I review my account privacy settings.</label>
+
+    <p id="progress">0 of 5 completed</p>
+    <button onclick="updateProgress()">Update progress</button>
+  </section>
+</main>
+
+<footer>
+  <p>Created by <strong>Mark Garbee</strong></p>
+  <p>Technology · Cybersecurity · Digital Innovation</p>
+  <a href="https://markgarbee.github.io/">Visit my professional website</a>
+</footer>
+
+<script>
+  function updateProgress() {
+    const boxes = document.querySelectorAll(
+      '.checklist input[type="checkbox"]'
+    );
+    const completed = [...boxes].filter(box => box.checked).length;
+
+    document.getElementById("progress").textContent =
+      `${completed} of ${boxes.length} completed`;
+  }
+</script>
+
+</body>
+</html>
